@@ -32,3 +32,8 @@ destroy-app: check
 		-var region=$(REGION) 																						\
 		-var access_key="$$(aws_access_key)" 															\
 		-var secret_key="$$(aws_secret_key)"
+
+
+# Not working yet
+output-app: check
+	@/bin/echo -n "AMI ID: "; terraform output  -state=$(STATE_DIR)/$(REGION)_nodejs-app.tfstate
